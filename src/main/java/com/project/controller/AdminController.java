@@ -34,13 +34,13 @@ public class AdminController {
 	private ProductService pservice;
 	@Autowired
 	private AdminService aservice;
-	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/productImages";
+	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/product images";
 
 	@GetMapping("/admin")
 	public String admin() {
 		return "login";
 	}
-	
+
 	@RequestMapping("/register")
 	public String register(String email,String password) {
 		if(!(email==null && password==null)) {
@@ -55,7 +55,7 @@ public class AdminController {
 	public String login() {
 		return "login";
 	}
-	
+
 	@PostMapping("/login")
 	public String login(@RequestParam("email")String email,@RequestParam("password") String password,Model model) {
 		List<Admin> list = aservice.fetchAll();
@@ -170,6 +170,6 @@ public class AdminController {
 	model.addAttribute("categories",cservice.getAll());
 	model.addAttribute("productDTO", pdt);
 	return "productsAdd";
-		
+
 }
 }

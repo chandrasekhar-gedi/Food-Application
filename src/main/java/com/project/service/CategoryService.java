@@ -13,18 +13,22 @@ import com.project.repository.CategoryRepository;
 public class CategoryService {
 	@Autowired
 	private CategoryRepository crepo;
-	public void saveCategory(Category c) {
+	public void saveCategory(Category c)
+    {
 		crepo.save(c);
 	}
-	public List<Category> getAll() {
+	public List<Category> getAll()
+    {
 		return crepo.findAll();
 	}
 	
-	public void deletebyId(int id) {
+	public void deletebyId(int id)
+    {
 		crepo.deleteById(id);
 	}
 	
-	public Optional<Category> fetchbyId(int id) {
+	public Optional<Category> fetchbyId(int id)
+    {
 		return crepo.findById(id);
 	}
 	

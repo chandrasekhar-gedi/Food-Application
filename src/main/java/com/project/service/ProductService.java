@@ -14,19 +14,24 @@ public class ProductService {
 	@Autowired
 	private ProductRepository prepo;
 	
-	public void saveProduct(Product p) {
+	public void saveProduct(Product p)
+    {
 		prepo.save(p);
 	}
-	public List<Product> getAll() {
+	public List<Product> getAll()
+    {
 		return prepo.findAll();
 	}
-	public void deletebyId(long id) {
+	public void deletebyId(long id)
+    {
 		prepo.deleteById(id);
 	}
-	public Optional<Product> fetchbyId(long id) {
+	public Optional<Product> fetchbyId(long id)
+    {
 		return prepo.findById(id);
 	}
-	public List<Product> getProByCatId(int id) {
+	public List<Product> getProByCatId(int id)
+    {
 		return prepo.findAllByCategory_Id(id);
 	}
 }
